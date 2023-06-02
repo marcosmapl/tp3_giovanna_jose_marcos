@@ -10,7 +10,7 @@ WORKDIR /app
 COPY . /app
 
 # Sua imagem deve ter o python 3.8+ instalado e o pip
-RUN apt update && apt install -y python3 python3-pip libpq-dev wget gnupg2 lsb-release
+RUN apt update && apt install -y python3 python3-pip libpq-dev wget gnupg2 lsb-release unzip
 
 RUN pip install -r requirements.txt
 
