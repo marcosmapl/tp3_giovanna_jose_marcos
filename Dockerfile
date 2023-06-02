@@ -23,7 +23,7 @@ RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-
 
 RUN service postgresql start && \
     su - postgres -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" &&\
-    su - postgres -c "createdb tpch" &&\
+    su - postgres -c "createdb tpchdb" &&\
     service postgresql stop
 
 
