@@ -14,6 +14,9 @@ RUN apt update && apt install -y python3 python3-pip libpq-dev wget gnupg2 lsb-r
 
 RUN pip install -r requirements.txt
 
+# Adicione a instalação das bibliotecas pandas, seaborn e plotly
+RUN pip install pandas seaborn plotly_express
+
 RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list' &&\
     wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - &&\
     apt update && apt install -y postgresql
